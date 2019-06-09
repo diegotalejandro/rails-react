@@ -12,6 +12,24 @@
   </head>
 
   <body>
+    <div>
+  <% if signed_in? %>
+    <%  if admin_signed_in? %>
+      <%= link_to "Salir", destroy_admin_session_path, method: :delete %>
+      <%= link_to "Ver asistencias", admin_asistencias_path %>
+    <%end%>
+    <% if user_signed_in? %>
+      <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+      <%= link_to "Ingresar asistencias", new_user_asistencia_path %>
+    <%end%>
+
+  <% else %>
+    <%= link_to "Registrarse como admin", new_admin_registration_path %>
+    <%= link_to "Ingresar como admin", new_admin_session_path %>
+    <%= link_to "Registrarse como usuario", new_user_registration_path %>
+    <%= link_to "Ingresar como usuario", new_user_session_path %>
+  <% end %>
+</div>
     <%= yield %>
   </body>
 </html>

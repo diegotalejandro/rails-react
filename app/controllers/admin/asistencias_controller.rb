@@ -1,5 +1,5 @@
-class AsistenciasController < ApplicationController
-  skip_before_action :verify_authenticity_token
+class Admin::AsistenciasController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_asistencium, only: [:show, :edit, :update, :destroy]
 
   # GET /asistencia

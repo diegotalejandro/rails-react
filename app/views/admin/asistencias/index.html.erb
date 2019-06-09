@@ -38,7 +38,7 @@ tr:nth-child(even) {
         <td><%= asistencium.correo %></td>
         <td><%= asistencium.telefono %></td>
         <td><%= asistencium.institucion %></td>
-        <td><%= link_to 'Editar datos', edit_asistencia_path(asistencium) %></td>
+        <td><%= link_to 'Editar datos', edit_user_asistencia_path(asistencium) %></td>
 
       </tr>
     <% end %>
@@ -47,4 +47,4 @@ tr:nth-child(even) {
 
 <br>
 
-<%= link_to 'Crear nueva asistencia', new_asistencia_path %>
+<%= link_to 'Crear nueva asistencia', new_user_asistencia_path %>

@@ -41,7 +41,7 @@ class RegistroForm extends Component {
       if (this.props.asistenciaId) {
      axios({
         method: "get",
-        url: `/asistencias/${this.props.asistenciaId}/edit.json`,
+        url: `/user/asistencias/${this.props.asistenciaId}/edit.json`,
         responseType: "json",
         headers: {
           "Content-Type": "application/json"
@@ -84,11 +84,11 @@ class RegistroForm extends Component {
         {flash_message}
         <Formik showMessage={this.showMessage} enableReinitialize={true} initialValues={this.state.asistencia} validationSchema={RegistroSchema}
         onSubmit={(values, { setSubmitting }) => {
-
+            //const token = document.getElementsByName("csrf-token")[0].content;
           const token = null;
           const url = this.props.asistenciaId
-              ? `/asistencias/${this.props.asistenciaId}.json`
-              : `/asistencias.json`;
+              ? `/user/asistencias/${this.props.asistenciaId}.json`
+              : `/user/asistencias.json`;
           const method = this.props.asistenciaId ? "PUT" : "POST";
             axios(
              url,{
