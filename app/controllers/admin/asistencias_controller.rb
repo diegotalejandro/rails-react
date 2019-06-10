@@ -31,7 +31,7 @@ class Admin::AsistenciasController < ApplicationController
       if @asistencium.valid?
       @asistencium.save
       @success=true
-      redirect_to asistencias_path, notice: "Asistencia creado exitosamente"
+      redirect_to admin_asistencias_path, notice: "Asistencia creado exitosamente"
     else
       render :new
       end
@@ -46,13 +46,13 @@ class Admin::AsistenciasController < ApplicationController
       @asistencium = Asistencium.find params[:id]
       if @asistencium.update(asistencium_params)
 
-        redirect_to asistencias_path, notice: "asistencium editado exitosamente"
+        redirect_to admin_asistencias_path, notice: "asistencium editado exitosamente"
       else
         flash.now[:alert] = "Ha ocurrido un error"
         render :edit
       end
     else
-      redirect_to asistencias_path, alert: "asistencium no existe"
+      redirect_to admin_asistencias_path, alert: "asistencium no existe"
     end
   end
 
@@ -61,7 +61,7 @@ class Admin::AsistenciasController < ApplicationController
   def destroy
     @asistencium.destroy
     respond_to do |format|
-      format.html { redirect_to asistencias_path, notice: 'Asistencium was successfully destroyed.' }
+      format.html { redirect_to admin_asistencias_path, notice: 'Asistencium was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

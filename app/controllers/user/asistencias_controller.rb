@@ -27,11 +27,11 @@ class User::AsistenciasController < ApplicationController
   # POST /asistencia.json
   def create
     @success=false
-    @asistencium = current_user.asistencium.new(asistencium_params)
+    @asistencium = current_user.asistencia.new(asistencium_params)
       if @asistencium.valid?
       @asistencium.save
       @success=true
-      redirect_to asistencias_path, notice: "Asistencia creado exitosamente"
+      redirect_to user_asistencias_path, notice: "Asistencia creado exitosamente"
     else
       render :new
       end
@@ -43,16 +43,16 @@ class User::AsistenciasController < ApplicationController
   def update
     @success=true
     if Asistencium.exists?(params[:id])
-      @asistencium = Asistencium.find params[:id]
+      @asistencium = current_user.asistencia.find params[:id]
       if @asistencium.update(asistencium_params)
 
-        redirect_to asistencias_path, notice: "asistencium editado exitosamente"
+        redirect_to user_asistencias_path, notice: "asistencium editado exitosamente"
       else
         flash.now[:alert] = "Ha ocurrido un error"
         render :edit
       end
     else
-      redirect_to asistencias_path, alert: "asistencium no existe"
+      redirect_to user_asistencias_path, alert: "asistencium no existe"
     end
   end
 
@@ -61,7 +61,7 @@ class User::AsistenciasController < ApplicationController
   def destroy
     @asistencium.destroy
     respond_to do |format|
-      format.html { redirect_to asistencias_path, notice: 'Asistencium was successfully destroyed.' }
+      format.html { redirect_to user_asistencias_path, notice: 'Asistencium was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

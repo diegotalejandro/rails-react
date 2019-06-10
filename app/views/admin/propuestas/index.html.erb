@@ -1,0 +1,49 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de propuestas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>titulo</th>
+      <th>Correo</th>
+      <th>organizacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @propuestas.each do |propuestum| %>
+      <tr>
+        <td><%= propuestum.nombre %></td>
+        <td><%= propuestum.titulo %></td>
+        <td><%= propuestum.correo %></td>
+        <td><%= propuestum.organizacion %></td>
+        <td><%= link_to 'Editar datos', edit_admin_propuesta_path(propuestum) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear nueva propuesta', new_admin_propuesta_path %>
+<%= link_to 'Volver', root_path %>

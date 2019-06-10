@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   root 'home#index'
   namespace :admin do
     resources :asistencias
+    resources :propuestas
 end
 namespace :user do
 resources :asistencias
+resources :propuestas
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

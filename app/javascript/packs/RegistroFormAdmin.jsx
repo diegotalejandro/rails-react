@@ -5,6 +5,8 @@ import classNames from "classnames";
 import FlashMessage from "./FlashMessage";
 import axios from "axios";
 import * as _ from "lodash";
+import { passCsrfToken } from '../util/helpers'
+
 //import { CustomSelect } from "../CustomInputs";
 
 const RegistroSchema = Yup.object().shape({
@@ -15,7 +17,7 @@ const RegistroSchema = Yup.object().shape({
   institucion: Yup.string().required("Campo requerido")
 });
 
-class RegistroForm extends Component {
+class RegistroFormAdmin extends Component {
   state = {
     asistencia: {
       nombre:"",
@@ -41,7 +43,7 @@ class RegistroForm extends Component {
       if (this.props.asistenciaId) {
      axios({
         method: "get",
-        url: `/user/asistencias/${this.props.asistenciaId}/edit.json`,
+        url: `/admin/asistencias/${this.props.asistenciaId}/edit.json`,
         responseType: "json",
         headers: {
           "Content-Type": "application/json"
@@ -84,12 +86,13 @@ class RegistroForm extends Component {
         {flash_message}
         <Formik showMessage={this.showMessage} enableReinitialize={true} initialValues={this.state.asistencia} validationSchema={RegistroSchema}
         onSubmit={(values, { setSubmitting }) => {
-            //const token = document.getElementsByName("csrf-token")[0].content;
+          //const token = document.getElementsByName("csrf-token")[0].content;
           const token = null;
           const url = this.props.asistenciaId
-              ? `/user/asistencias/${this.props.asistenciaId}.json`
-              : `/user/asistencias.json`;
+              ? `/admin/asistencias/${this.props.asistenciaId}.json`
+              : `/admin/asistencias.json`;
           const method = this.props.asistenciaId ? "PUT" : "POST";
+          passCsrfToken(document, axios)
             axios(
              url,{
                method,
@@ -102,8 +105,8 @@ class RegistroForm extends Component {
                 })
 
               .then(response => {
-                if (true /*response.data.success*/) {
-                  window.location.assign(`/asistencias?success=1`);
+                if (true || response.data.success) {
+                  window.location.assign(`/admin/asistencias?success=1`);
                   }
                  else {
                    this.showMessage({
@@ -121,7 +124,7 @@ class RegistroForm extends Component {
                 })
               )
               .then(() => setSubmitting(false));
-              window.location.assign(`/asistencias?success=1`);
+              window.location.assign(`/admin/asistencias?success=1`);
           }}>
 
           {({
@@ -313,4 +316,4 @@ class RegistroForm extends Component {
   }
 }
 
-WebpackerReact.setup({RegistroForm})
+WebpackerReact.setup({RegistroFormAdmin})

@@ -8,7 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <%= javascript_pack_tag 'hello_react' %>
-     <%= javascript_pack_tag 'RegistroForm' %>
+     <%= javascript_pack_tag 'RegistroFormUser' %>
+     <%= javascript_pack_tag 'RegistroFormAdmin' %>
+     <%= javascript_pack_tag 'PropuestaFormAdmin' %>
+     <%= javascript_pack_tag 'PropuestaFormUser' %>
   </head>
 
   <body>
@@ -17,10 +20,12 @@
     <%  if admin_signed_in? %>
       <%= link_to "Salir", destroy_admin_session_path, method: :delete %>
       <%= link_to "Ver asistencias", admin_asistencias_path %>
+      <%= link_to "Ver propuestas", admin_propuestas_path %>
     <%end%>
     <% if user_signed_in? %>
       <%= link_to "Salir", destroy_user_session_path, method: :delete %>
-      <%= link_to "Ingresar asistencias", new_user_asistencia_path %>
+      <%= link_to "Ver mis asistencias", user_asistencias_path %>
+      <%= link_to "Ver mis propuestas", user_propuestas_path %>
     <%end%>
 
   <% else %>
