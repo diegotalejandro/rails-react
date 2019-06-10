@@ -37,7 +37,7 @@ tr:nth-child(even) {
         <td><%= propuestum.correo %></td>
         <td><%= propuestum.organizacion %></td>
         <td><%= link_to 'Editar datos', edit_admin_propuesta_path(propuestum) %></td>
-
+        <td><%= link_to 'Ver', admin_propuesta_path(propuestum) %></td>
       </tr>
     <% end %>
   </tbody>

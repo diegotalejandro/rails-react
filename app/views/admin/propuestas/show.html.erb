@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
-<h1>Datos de la asistencia</h1>
+<h1>Datos de la propuesta</h1>
 <p>
   <strong>Nombre:</strong>
-  <%= @asistencium.nombre %>
+  <%= @propuestum.nombre %>
 </p>
 
 <p>
-  <strong>Apellido:</strong>
-  <%= @asistencium.apellido %>
+  <strong>Titulo:</strong>
+  <%= @propuestum.titulo %>
 </p>
 
 <p>
   <strong>Correo:</strong>
-  <%= @asistencium.correo %>
+  <%= @propuestum.correo %>
 </p>
 
 <p>
-  <strong>Teléfono:</strong>
-  <%= @asistencium.telefono %>
+  <strong>Organización:</strong>
+  <%= @propuestum.organizacion %>
 </p>
 
 <p>
-  <strong>Institución:</strong>
-  <%= @asistencium.institucion %>
+  <strong>Resumen:</strong>
+  <%= @propuestum.resumen %>
 </p>
 
 
-<%= link_to 'Editar datos', edit_asistencium_path(@asistencium) %> |
-<%= link_to 'Volver', asistencia_path %>
+<%= link_to 'Editar datos', edit_admin_propuesta_path(@propuestum) %> |
+<%= link_to 'Volver', admin_propuestas_path %>
