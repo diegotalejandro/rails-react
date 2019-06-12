@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>ReactRails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,63 +23,39 @@
      <%= javascript_pack_tag 'PropuestaFormUser' %>
 
 
-
-
-     <nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Chile Wic", root_path, class: "navbar-brand" %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-          <% if admin_signed_in? %>
-        <li><%= link_to "Ver Asistencias", admin_asistencias_path%></li>
-       <li><%= link_to "Ver Propuestas", admin_propuestas_path%></li>
-         <% end %>
-         <% if user_signed_in? %>
-       <li><%= link_to "Ver mis Asistencias", user_asistencias_path%></li>
-      <li><%= link_to "Ver mis Propuestas", user_propuestas_path%></li>
-        <% end %>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="">
-
-        <ul class="">
-
-        </ul>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if admin_signed_in? %>
-          <li><%= link_to "Salir", destroy_admin_session_path, method: :delete %></li>
-        <% else %>
-        <% if !user_signed_in? %>
-          <li><%= link_to "Ingresar General Chair", new_admin_session_path  %></li>
-        <% end %>
-          <% end %>
-        <% if user_signed_in? %>
-          <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <% if !admin_signed_in? %>
-          <li><%= link_to "Ingresar Usuario", new_user_session_path  %></li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+     <%= csrf_meta_tags %>
+     <%= csp_meta_tag %>
   </head>
 
-  <body>
-    <div>
 
-</div>
+
+  <body>
+    <%= render "layouts/header" %>
+
+
+      <%= render "layouts/footer" %>
+      <%= react_component 'Home' %>
+
+
+
+
+
+
+
+
+
+
+
     <%= yield %>
+
   </body>
+
+  
+
+
+
+
+
+
+
 </html>
