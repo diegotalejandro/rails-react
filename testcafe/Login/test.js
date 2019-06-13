@@ -13,4 +13,5 @@ test('Iniciando Pruebas: Login', async t => {
        .typeText(page.mailInput, 'usuario@mail.com')
        .typeText(page.passwordInput, 'hola1234')
        .click(page.boton);
+       .wait(2000);
 });

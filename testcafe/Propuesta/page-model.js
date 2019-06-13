@@ -4,18 +4,18 @@ export default class Page {
    constructor () {
 
     // Selecciona el elemento que contiene el input de E-Mail
-    this.mail1Input      = Selector('#user_email');
+    this.mail1Input      = Selector('#exampleInputEmail1');
 
     // Selecciona el elemento que contiene el input de Password
     this.passwordInput  = Selector('#user_password');
 
     // Selecciona el elemento que contiene el botón Sing up
-    this.botonlogin          = Selector('#new_user > div.actions > input[type="submit"]');
+    this.botonlogin          = Selector('#new_user > div:nth-child(6) > input');
 
     // Selecciona el elemento que contiene el botón Sing up
     this.botonPropuesta         = Selector('#navbar > ul:nth-child(1) > li:nth-child(3) > a');
 
-    this.botonCrearPropuesta         = Selector('body > a:nth-child(8)');
+    this.botonCrearPropuesta         = Selector('body > div > div > div > div > div.card-footer.text-muted > a:nth-child(1)');
 
 
        // Selecciona el elemento que contiene el input de Nombre

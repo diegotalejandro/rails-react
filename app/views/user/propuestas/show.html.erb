@@ -1,30 +1,56 @@
 <p id="notice"><%= notice %></p>
+
+<div class="container">
 <h1>Datos de la propuesta</h1>
-<p>
-  <strong>Nombre:</strong>
-  <%= @propuestum.nombre %>
-</p>
+<div class="card">
+  <div class="card-body">
+        <div class="card-group">
+        <div class="card">
+          <div class="card-header">
+            Datos
+          </div>
+          <div class="card-body">
+    <p>
+      <strong>Nombre:</strong>
+      <%= @propuestum.nombre %>
+    </p>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @propuestum.titulo %>
-</p>
+    <p>
+      <strong>Titulo:</strong>
+      <%= @propuestum.titulo %>
+    </p>
 
-<p>
-  <strong>Correo:</strong>
-  <%= @propuestum.correo %>
-</p>
+    <p>
+      <strong>Correo:</strong>
+      <%= @propuestum.correo %>
+    </p>
 
-<p>
-  <strong>Organización:</strong>
-  <%= @propuestum.organizacion %>
-</p>
-
-<p>
-  <strong>Resumen:</strong>
-  <%= @propuestum.resumen %>
-</p>
+    <p>
+      <strong>Organización:</strong>
+      <%= @propuestum.organizacion %>
+    </p>
+</div>
+</div>
 
 
-<%= link_to 'Editar datos', edit_user_propuesta_path(@propuestum) %> |
-<%= link_to 'Volver', user_propuestas_path %>
+    <div class="card">
+      <div class="card-header">
+        Resumen
+      </div>
+        <div class="card-body">
+    <p>
+      <%= @propuestum.resumen %>
+    </p>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    <%= link_to 'Editar datos', edit_user_propuesta_path(@propuestum), class:"btn btn-default btn-primary" %>
+    <%= link_to 'Volver', user_propuestas_path, class:"btn btn-default btn-primary" %>
+
+    </div>
+
+</div>
+</div>

@@ -13,7 +13,7 @@ const RegistroSchema = Yup.object().shape({
   nombre: Yup.string().required("Campo requerido"),
   apellido: Yup.string().required("Campo requerido"),
   correo: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
-  telefono: Yup.number().integer("Deben ser números").required("Campo requerido"),
+  telefono: Yup.number("Deben ser números").integer().required("Campo requerido"),
   institucion: Yup.string().required("Campo requerido")
 });
 

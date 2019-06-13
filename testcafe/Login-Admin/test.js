@@ -12,5 +12,6 @@ test('Iniciando Pruebas: Login Admin', async t => {
    await t
        .typeText(page.mailInput, 'admin2@mail.com')
        .typeText(page.passwordInput, 'hola1234')
-       .click(page.boton);
+       .click(page.boton)
+       .wait(2000);
 });

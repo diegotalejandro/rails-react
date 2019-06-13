@@ -1,25 +1,14 @@
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
 <p id="notice"><%= notice %></p>
-
-<h1>Lista de asistencia</h1>
-
-<table>
-  <thead>
+<div class="container">
+<div class="row">
+  <div class="col-lg-12">
+<div class="card">
+  <div class="card-header">
+   Lista de asistencia
+ </div>
+  <div class="card-body">
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
@@ -38,14 +27,19 @@ tr:nth-child(even) {
         <td><%= asistencium.correo %></td>
         <td><%= asistencium.telefono %></td>
         <td><%= asistencium.institucion %></td>
-        <td><%= link_to 'Editar datos', edit_user_asistencia_path(asistencium) %></td>
+        <td><%= link_to 'Editar datos', edit_user_asistencia_path(asistencium), class:"btn btn-default btn-primary" %></td>
 
       </tr>
     <% end %>
   </tbody>
 </table>
-
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to 'Crear nueva asistencia', new_user_asistencia_path , class:"btn btn-default btn-primary"%>
+    <%= link_to 'Volver', root_path, class:"btn btn-default btn-primary" %>
+  </div>
+</div>
+</div>
+</div>
+</div>
 <br>
-
-<%= link_to 'Crear nueva asistencia', new_user_asistencia_path %>
-<%= link_to 'Volver', root_path %>

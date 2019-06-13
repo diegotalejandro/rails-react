@@ -15,5 +15,6 @@ test('Iniciando Pruebas: Registrar Usuario', async t => {
        .typeText(page.telefonoInput, '91111111')
        .typeText(page.passwordInput, 'contraseña')
        .typeText(page.confPasswordInput, 'contraseña')
-       .click(page.boton);
+       .click(page.boton)
+       .wait(2000);
 });

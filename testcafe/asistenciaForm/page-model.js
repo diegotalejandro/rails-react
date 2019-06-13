@@ -3,20 +3,20 @@ import { Selector } from 'testcafe';
 export default class Page {
    constructor () {
        // Selecciona el elemento que contiene el input de E-Mail
-       this.mail1Input      = Selector('#user_email');
+       this.mail1Input      = Selector('#exampleInputEmail1');
 
        // Selecciona el elemento que contiene el input de Password
        this.passwordInput  = Selector('#user_password');
- 
+
        // Selecciona el elemento que contiene el botón Sing up
-       this.botonlogin          = Selector('#new_user > div.actions > input[type="submit"]');
-      
+       this.botonlogin          = Selector('#new_user > div:nth-child(6) > input');
+
        // Selecciona el elemento que contiene el botón Ingresar Asistencia
        this.botonAsistencia          = Selector('#navbar > ul:nth-child(1) > li:nth-child(2) > a');
-      
+
 
        // Selecciona el elemento que contiene el input de Crear nueva asistencia
-       this.crearAsistenciaInput         = Selector('body > a:nth-child(8)');
+       this.crearAsistenciaInput         = Selector('body > div > div > div > div > div.card-footer.text-muted > a:nth-child(1)');
 
        // Selecciona el elemento que contiene el input de Nombre
        this.nameInput         = Selector('input[name=nombre]');
@@ -32,11 +32,11 @@ export default class Page {
 
        // Selecciona el elemento que contiene el input de Institución
        this.institucionInput  = Selector('input[name=institucion]');
-       
-       
+
+
        // Selecciona el elemento que contiene el botón Agregar nueva asistencia
        this.botonAgregar                 = Selector('body > div:nth-child(3) > div > form > div > div > button');
-      
+
        // Selecciona el elemento que contiene el botón Buscar
        //this.buscar                = Selector('#body > div > app-plantilla > div > div.panel-body > div > div > form > div:nth-child(3) > div > button.btn.btn-primary');
    }

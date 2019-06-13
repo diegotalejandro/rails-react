@@ -19,8 +19,8 @@ test('Iniciando Pruebas: Propuesya', async t => {
       .typeText(page.mailInput, 'usuario@mail.com')
       .typeText(page.tituloInput, 'TDD')
       .typeText(page.organizacionInput, 'UDP')
-      .typeText(page.resumenInput, 'Metodología TDD')
+      .typeText(page.resumenInput, 'Metodología TDD, Some quick example text to build on the card title and make up the bulk of the cards content.')
       .click(page.boton)
-      .wait(1000);
+      .wait(2000);
 
 });

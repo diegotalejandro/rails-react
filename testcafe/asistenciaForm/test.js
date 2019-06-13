@@ -11,7 +11,7 @@ const page = new Page();
 test('Iniciando Pruebas', async t => {
    await t
       .typeText(page.mail1Input, 'usuario@mail.com')
-      .typeText(page.passwordInput, 'hola1234')
+      .typeText(page.passwordInput, 'hola1234')      
       .click(page.botonlogin)
       .click(page.botonAsistencia)
       .click(page.crearAsistenciaInput)
