@@ -44,10 +44,10 @@
           <% end %>
         <% end %>
         <% if reviser_signed_in? %>
-        <li><%= link_to "Salir", destroy_reviser_session_path, method: :delete %></li>
+        <li class="nav-item"><%= link_to "Salir", destroy_reviser_session_path, method: :delete,class:"nav-link" %></li>
         <% else %>
         <% if !admin_signed_in? %>
-        <li><%= link_to "Ingresar Revisador", new_reviser_session_path  %></li>
+        <li class="nav-item"><%= link_to "Ingresar Revisador", new_reviser_session_path,class:"nav-link"  %></li>
         <% end %>
       <% end %>
       </ul>
