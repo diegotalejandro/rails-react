@@ -1,4 +1,0 @@
-  def change
-    add_reference :propuesta, :admin, foreign_key: true
-  end
-end

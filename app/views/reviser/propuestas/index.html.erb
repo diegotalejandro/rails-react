@@ -25,16 +25,13 @@
         <td><%= propuestum.titulo %></td>
         <td><%= propuestum.correo %></td>
         <td><%= propuestum.organizacion %></td>
-        <td><%= link_to 'Editar datos', edit_user_propuesta_path(propuestum), class:"btn btn-default btn-primary"  %></td>
-        <td><%= link_to 'Ver', user_propuesta_path(propuestum), class:"btn btn-default btn-primary"  %></td>
-
+        <td><%= link_to 'Ver', reviser_propuesta_path(propuestum), class:"btn btn-default btn-primary"   %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
   </div>
   <div class="card-footer text-muted">
-    <%= link_to 'Crear nueva propuesta', new_user_propuesta_path , class:"btn btn-default btn-primary"%>
     <%= link_to 'Volver', root_path, class:"btn btn-default btn-primary" %>
   </div>
 </div>
