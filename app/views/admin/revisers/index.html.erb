@@ -25,7 +25,7 @@
         <td><%= propuestum.titulo %></td>
         <td><%= propuestum.correo %></td>
         <td><%= propuestum.organizacion %></td>
-        <td><%= link_to 'Aprobar', edit_admin_propuesta_path(propuestum), class:"btn btn-default btn-primary"   %></td>
+        <td><%= link_to 'Editar datos', edit_admin_propuesta_path(propuestum), class:"btn btn-default btn-primary"   %></td>
         <td><%= link_to 'Ver', admin_propuesta_path(propuestum), class:"btn btn-default btn-primary"   %></td>
         <td><% propuestum.rating.to_i.times do  %>
          <span class="glyphicon glyphicon-star"></span>
@@ -39,6 +39,7 @@
 </table>
   </div>
   <div class="card-footer text-muted">
+    <%= link_to 'Crear nueva propuesta', new_admin_propuesta_path , class:"btn btn-default btn-primary"%>
     <%= link_to 'Volver', root_path, class:"btn btn-default btn-primary" %>
   </div>
 </div>

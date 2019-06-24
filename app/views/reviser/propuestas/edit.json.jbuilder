@@ -1,6 +1,3 @@
 json.id @propuestum[:id]
-json.nombre @propuestum[:nombre]
+json.rating @propuestum[:rating]
 json.titulo @propuestum[:titulo]
-json.correo @propuestum[:correo]
-json.organizacion @propuestum[:organizacion]
-json.resumen @propuestum[:resumen]

@@ -1,0 +1,79 @@
+class Admin::RevisersController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :set_revisers, only: [:show, :edit, :update, :destroy]
+
+  # GET /asistencia
+  # GET /asistencia.json
+  def index
+    @revisers = Reviser.all
+  end
+
+  # GET /asistencia/1
+  # GET /asistencia/1.json
+  def show
+  end
+
+  # GET /asistencia/new
+  def new
+    @asistencium = Asistencium.new
+  end
+
+  # GET /asistencia/1/edit
+  def edit
+    @asistencium = Asistencium.find params[:id]
+  end
+
+  # POST /asistencia
+  # POST /asistencia.json
+  def create
+    @success=false
+    @asistencium = Asistencium.new(asistencium_params)
+      if @asistencium.valid?
+      @asistencium.save
+      @success=true
+      redirect_to admin_asistencias_path, notice: "Asistencia creado exitosamente"
+    else
+      render :new
+      end
+
+  end
+
+  # PATCH/PUT /asistencia/1
+  # PATCH/PUT /asistencia/1.json
+  def update
+    @success=true
+    if Asistencium.exists?(params[:id])
+      @asistencium = Asistencium.find params[:id]
+      if @asistencium.update(asistencium_params)
+
+        redirect_to admin_asistencias_path, notice: "asistencium editado exitosamente"
+      else
+        flash.now[:alert] = "Ha ocurrido un error"
+        render :edit
+      end
+    else
+      redirect_to admin_asistencias_path, alert: "asistencium no existe"
+    end
+  end
+
+  # DELETE /asistencia/1
+  # DELETE /asistencia/1.json
+  def destroy
+    @asistencium.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_asistencias_path, notice: 'Asistencium was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_asistencium
+      @asistencium = Asistencium.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def asistencium_params
+      params.require(:asistencium).permit(:id,:nombre, :apellido, :correo, :telefono, :institucion)
+    end
+end

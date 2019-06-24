@@ -32,7 +32,7 @@ class Admin::PropuestasController < ApplicationController
       @success=true
       redirect_to admin_propuestas_path, notice: "propuesta creado exitosamente"
     else
-      
+
       end
 
   end
@@ -73,6 +73,6 @@ class Admin::PropuestasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def propuestum_params
-      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen)
+      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen, :reviser_id,:aprobacion)
     end
 end

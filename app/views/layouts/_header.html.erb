@@ -19,6 +19,9 @@
       <li class="nav-item"><%= link_to "Ver mis Asistencias", user_asistencias_path,class:"nav-link"%></li>
       <li class="nav-item"><%= link_to "Ver mis Propuestas", user_propuestas_path,class:"nav-link"%></li>
       <% end %>
+      <% if reviser_signed_in? %>
+      <li class="nav-item"><%= link_to "Ver Propuestas", reviser_propuestas_path,class:"nav-link"%></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="">
@@ -36,10 +39,17 @@
           <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "Salir", destroy_user_session_path, method: :delete,class:"nav-link" %></li>
           <% else %>
-          <% if !admin_signed_in? %>
+          <% if !admin_signed_in? || !reviser_signed_in?  %>
           <li class="nav-item" ><%= link_to "Ingresar Usuario", new_user_session_path,class:"nav-link"  %></li>
           <% end %>
         <% end %>
+        <% if reviser_signed_in? %>
+        <li><%= link_to "Salir", destroy_reviser_session_path, method: :delete %></li>
+        <% else %>
+        <% if !admin_signed_in? %>
+        <li><%= link_to "Ingresar Revisador", new_reviser_session_path  %></li>
+        <% end %>
+      <% end %>
       </ul>
       </div><!--/.nav-collapse -->
 

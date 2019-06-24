@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :asistencias
     resources :propuestas
+    resources :revisers
 end
 namespace :user do
 resources :asistencias

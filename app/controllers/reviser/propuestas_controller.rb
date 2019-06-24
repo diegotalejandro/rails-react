@@ -9,6 +9,7 @@ class Reviser::PropuestasController < ApplicationController
   # GET /propuesta/1
   # GET /propuesta/1.json
   def show
+
   end
 
   # GET /propuesta/new
@@ -72,6 +73,6 @@ class Reviser::PropuestasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def propuestum_params
-      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen)
+      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen, :rating)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_071854) do
+ActiveRecord::Schema.define(version: 2019_06_24_092142) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_071854) do
     t.integer "user_id"
     t.integer "reviser_id"
     t.integer "rating"
+    t.string "aprobacion"
     t.index ["reviser_id"], name: "index_propuesta_on_reviser_id"
     t.index ["user_id"], name: "index_propuesta_on_user_id"
   end

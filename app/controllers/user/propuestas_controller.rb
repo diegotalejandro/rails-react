@@ -74,6 +74,6 @@ class User::PropuestasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def propuestum_params
-      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen)
+      params.require(:propuestum).permit(:nombre, :titulo, :correo, :organizacion, :resumen , :aprobacion)
     end
 end

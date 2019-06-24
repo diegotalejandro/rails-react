@@ -47,10 +47,22 @@
   </div>
 
   <div class="card-footer text-muted">
-    <%= link_to 'Editar datos', edit_admin_propuesta_path(@propuestum), class:"btn btn-default btn-primary" %>
+    <%= link_to 'Aprobar', edit_admin_propuesta_path(@propuestum), class:"btn btn-default btn-primary" %>
     <%= link_to 'Volver', admin_propuestas_path, class:"btn btn-default btn-primary" %>
 
     </div>
 
+</div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+  <%= content_for :page_title, "Editar la propuesta" %>
+  <%= react_component('AsignarRevisadorFormAdmin',propuestaId:@propuestum[:id]) %>
+</div>
 </div>
 </div>

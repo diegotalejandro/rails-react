@@ -47,10 +47,10 @@
   </div>
 
   <div class="card-footer text-muted">
-    <%= link_to 'Editar datos', edit_reviser_propuesta_path(@propuestum), class:"btn btn-default btn-primary" %>
+    <%= link_to 'Calificar', edit_reviser_propuesta_path(@propuestum), class:"btn btn-default btn-primary" %>
     <%= link_to 'Volver', reviser_propuestas_path, class:"btn btn-default btn-primary" %>
+    <h1><%= @propuestum.aprobacion %></h1>
   </div>
-
     </div>
 
 </div>
