@@ -1,25 +1,40 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
+  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  <li data-target="#myCarousel" data-slide-to="1"></li>
+  <li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <%= image_tag("3.jpg", :alt => "rss feed", class:"d-block w-100") %>
+        <%= image_tag("fondo.png", :alt => "rss feed", class:"tales") %>
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Slide 1</h3>
+          <p>es la slide 1.</p>
+        </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag("ada.jpeg", :alt => "rss feed", class:"d-block w-100") %>
+      <%= image_tag("fondo.png", :alt => "rss feed", class:"tales") %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Slide 2</h3>
+        <p>es la slide 2.</p>
+      </div>
     </div>
+
     <div class="carousel-item">
-    <%= image_tag("3.jpg", :alt => "rss feed", class:"d-block w-100") %>
+    <%= image_tag("fondo.png", :alt => "rss feed", class:"tales") %>
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Slide 3</h3>
+      <p>es la slide 3.</p>
     </div>
+
+      </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a  class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>

@@ -23,15 +23,17 @@
      <%= csp_meta_tag %>
   </head>
 
-
+<header>
+    <%= render "layouts/header" %>  
+</header>
 
   <body>
-    <%= render "layouts/header" %>
 
 
 
+<footer>
       <%= render "layouts/footer" %>
-
+</footer>
     <%= yield %>
 
   </body>
